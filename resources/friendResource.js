@@ -17,7 +17,7 @@ module.exports = {
     },
     createIndex: function(){
         var indexMapping = require('../mappings/friendMapping');
-        dao.createIndex(indexName,indexMapping);
+        this.dao.createIndex(indexName,indexMapping);
     },
     router: function () {
 

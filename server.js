@@ -12,12 +12,13 @@ var port = process.env.POST || 8080;
 
 var client = new elasticsearch.Client({
     host: 'localhost:9200',
-    log: 'trace'
+    log: 'trace',
+
 });
 var dao = require('./dao/dao');
 dao.init(client);
 
-//add resources
+//add resources'apiVersion' : '5.x'
 var friendResource = require('./resources/friendResource');
 friendResource.init(dao);
 friendResource.createIndex();
